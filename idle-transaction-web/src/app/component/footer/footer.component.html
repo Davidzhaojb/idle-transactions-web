@@ -1,1 +1,24 @@
-<p>footer works!</p>
+<div class="content">
+    <div class="first-line flex-center flex-align-start">
+        <div>
+            <img class="logo" src="../../../assets/images/logo.png" alt="" srcset="">
+            <span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum,
+                commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id euismod. Nam sollicitudin
+                mi quis orci lobortis feugiat.
+            </span>
+        </div>
+        <div>
+            <p>Usefull Links</p>
+            <span class="flex-center flex-column" *ngFor="let item of footerMenu">
+                {{item}}
+            </span>
+        </div>
+        <div>
+            <p>联系我们</p>
+        </div>
+    </div>
+    <div class="about center">
+        © 2017 Classifiedspot. All rights By bootstrapmb. Theme by TMD Studio
+    </div>
+</div>

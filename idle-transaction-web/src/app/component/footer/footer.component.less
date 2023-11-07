@@ -1,0 +1,35 @@
+.content {
+    height: 320px;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 50px;
+    .first-line {
+        width: 1140px;
+        margin: auto;
+        height: 240px;
+
+        &>div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            .logo{
+                margin-bottom: 10px;
+            }
+            &:first-child,
+            &:last-child {
+                width: 360px;
+                padding-right: 50px;
+            }
+
+            &:nth-child(2) {
+                width: 285px;
+            }
+
+        }
+    }
+
+    .about {
+        height: 50px;
+        line-height: 50px;
+    }
+}
