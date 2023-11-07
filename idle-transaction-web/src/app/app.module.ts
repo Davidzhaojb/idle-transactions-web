@@ -12,6 +12,8 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { ShareModule } from 'src/share/share.module';
 import { TestComponent } from './test/test.component';
+import { HeaderComponent } from './component/header/header.component';
+import { FooterComponent } from './component/footer/footer.component';
 
 registerLocaleData(zh);
 
@@ -19,6 +21,8 @@ registerLocaleData(zh);
     declarations: [
         AppComponent,
         TestComponent,
+        HeaderComponent,
+        FooterComponent,
     ],
     imports: [
         BrowserModule,

@@ -29,7 +29,8 @@
             ],
             "styles": [
               "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
-              "src/styles.less"
+              "./node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
+              "src/assets/styles/index.less"
             ],
             "scripts": []
           },
@@ -94,7 +95,8 @@
             ],
             "styles": [
               "./node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
-              "src/styles.less"
+              "./node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
+              "src/assets/styles/index.less"
             ],
             "scripts": []
           }
