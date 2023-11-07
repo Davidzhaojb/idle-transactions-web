@@ -15,6 +15,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { LoginComponent } from './component/login/login.component';
 import { CategoryComponent } from './component/category/category.component';
+import { SwiperComponent } from './component/swiper/swiper.component';
 
 registerLocaleData(zh);
 
@@ -25,6 +26,7 @@ registerLocaleData(zh);
         FooterComponent,
         LoginComponent,
         CategoryComponent,
+        SwiperComponent,
     ],
     imports: [
         BrowserModule,
