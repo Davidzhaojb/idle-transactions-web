@@ -1,0 +1,21 @@
+<div class="content">
+    <div class="header flex-between">
+        <div class="header-item">
+            <span>登录</span>
+            <span>注册</span>
+        </div>
+        <div class="header-item">
+            <span *ngFor="let item of tabLists;let i = index">
+                {{item.name}}
+            </span>
+        </div>
+    </div>
+    <div class="top-con">
+        <div class="top flex-between">
+            <img src="../../../assets/images/logo.png" alt="" srcset="">
+            <div class="addbtn">
+                发布闲置
+            </div>
+        </div>
+    </div>
+</div>

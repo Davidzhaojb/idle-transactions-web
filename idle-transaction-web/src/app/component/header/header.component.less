@@ -1,0 +1,62 @@
+@import '../../../assets/styles/varibles.less';
+
+.content {
+    width: 100%;
+    height: 65px;
+    background-color: @primary-bgcolor;
+
+
+    .header {
+        width: 1120px;
+        height: 100%;
+        line-height: 100%;
+        margin: auto;
+
+        .header-item {
+
+            span {
+                cursor: pointer;
+                margin-right: 10px;
+                color: @primary-color;
+
+                &:hover {
+                    color: @sec-color;
+                }
+            }
+        }
+
+    }
+
+    .top-con {
+        width: 100%;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+
+        .top {
+            width: 1120px;
+            height: 70px;
+            margin: auto;
+
+            img {
+                width: 206px;
+                height: 32px;
+            }
+
+            .addbtn {
+                border: 0;
+                background: #313E46;
+                border-radius: 40px;
+                color: #fff;
+                padding: 10px 25px;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 20px;
+                width: 160px;
+                height: 40px;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
