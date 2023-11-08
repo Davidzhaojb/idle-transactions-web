@@ -1,2 +1,24 @@
-<app-swiper></app-swiper>
-<div>home works!</div>
+<div class="content">
+    <div class="swiper">
+        <nz-carousel [nzEffect]="effect">
+            <div nz-carousel-content *ngFor="let index of array">
+                <img src="../../../assets/images/home/style.jpg" alt="" srcset="">
+            </div>
+        </nz-carousel>
+    </div>
+    <div class="category">
+        <div class="title">
+            <p>物品分类</p>
+        </div>
+        <div class="cat-detail">
+            <div nz-row>
+                <div class="cat-item" nz-col nzSpan="4" *ngFor="let item of categoryLists">
+                    <div class="cat-border">
+                        <img src="{{item.icon}}" alt="">
+                        <span>{{item.name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

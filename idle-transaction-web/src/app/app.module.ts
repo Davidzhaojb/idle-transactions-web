@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +14,8 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { LoginComponent } from './component/login/login.component';
 import { CategoryComponent } from './component/category/category.component';
-import { SwiperComponent } from './component/swiper/swiper.component';
+import { NzCarouselModule } from 'ng-zorro-antd';
+import { ServicesModule } from './service/service.module';
 
 registerLocaleData(zh);
 
@@ -26,14 +26,15 @@ registerLocaleData(zh);
         FooterComponent,
         LoginComponent,
         CategoryComponent,
-        SwiperComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
         ShareModule,
+        ServicesModule,
         HttpClientModule,
+        NzCarouselModule,
         BrowserAnimationsModule,
     ],
     providers: [{ provide: NZ_I18N, useValue: zh_CN }],

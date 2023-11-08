@@ -1,0 +1,78 @@
+@import '../../../assets/styles/varibles.less';
+
+.content {
+    width: 100%;
+    background: #fff;
+
+    .swiper {
+        max-width: 1920;
+        height: 500px;
+
+        [nz-carousel-content] {
+            text-align: center;
+            height: 360px;
+            line-height: 360px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        h3 {
+            color: #fff;
+            margin-bottom: 0;
+        }
+    }
+
+    .category {
+        width: 1140px;
+        margin: 60px auto;
+
+        .title {
+            border-bottom: 1px solid #e5e5e5;
+            height: 60px;
+            line-height: 60px;
+            margin-bottom: 20px;
+
+            p {
+                width: 200px;
+                margin: auto;
+                color: @primary-color;
+                text-align: center;
+                border-bottom: 4px solid @sec-color;
+            }
+        }
+
+        .cat-detail {
+            .cat-item {
+                width: 178px;
+                height: 190px;
+                padding: 4px;
+
+                .cat-border {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    border: 1px solid #E5E5E5;
+                    cursor: pointer;
+                    position: relative;
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        margin-bottom: 10px;
+                    }
+
+                    &:hover {
+                        border: 1px solid @sec-color;
+                        box-shadow: 0 4px 0 @sec-color;
+                    }
+                }
+            }
+        }
+    }
+}
