@@ -15,6 +15,10 @@ const routes: Routes = [
                 loadChildren: () => import('./personal/personal.module').then(mod => mod.PersonalModule)
             },
             {
+                path: 'addlist',
+                loadChildren: () => import('./add-listing/add-list.module').then(mod => mod.AddListModule)
+            },
+            {
                 path: '', redirectTo: 'home', pathMatch: 'full'
             },
         ]

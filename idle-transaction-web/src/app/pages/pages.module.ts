@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PagesComponent } from './pages.component';
 import { PagesRoutingModule } from './pages-routing.module';
+import { AddListingComponent } from './add-listing/add-listing.component';
 @NgModule({
-    declarations: [PagesComponent],
+    declarations: [PagesComponent, AddListingComponent],
     imports: [
         CommonModule,
         PagesRoutingModule

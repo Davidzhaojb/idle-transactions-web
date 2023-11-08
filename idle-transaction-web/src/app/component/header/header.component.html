@@ -5,7 +5,8 @@
             <span>注册</span>
         </div>
         <div class="header-item">
-            <span *ngFor="let item of tabLists;let i = index">
+            <span *ngFor="let item of tabLists;let i = index" [routerLink]="[item.router]"
+                routerLinkActive="router-link-active">
                 {{item.name}}
             </span>
         </div>
@@ -13,7 +14,7 @@
     <div class="top-con">
         <div class="top flex-between">
             <img src="../../../assets/images/logo.png" alt="" srcset="">
-            <div class="addbtn">
+            <div class="addbtn" [routerLink]="['app/addlist']">
                 发布闲置
             </div>
         </div>
