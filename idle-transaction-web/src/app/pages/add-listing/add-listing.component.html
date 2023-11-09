@@ -1,1 +1,32 @@
-<p>add-listing works!</p>
+<div class="content">
+    <div class="header">
+        <p>发布闲置</p>
+    </div>
+    <div class="detail flex-center flex-column">
+        <p>标题<span class="">*</span></p>
+        <input class="title-ipt" type="text" nz-input [(ngModel)]="formParams.title" required />
+        <p>选择分类</p>
+        <div class="cat-detail">
+            <div nz-row>
+                <div class="cat-item" nz-col nzSpan="4" *ngFor="let item of categoryLists; let i = index">
+                    <div class="cat-border" [ngClass]="{active: currentIndex == i}" (click)="changeCat(i)">
+                        <img src="{{item.icon}}" alt="">
+                        <!-- <span>{{item.name}}</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>价格</p>
+        <input type="text" nz-input [(ngModel)]="formParams.price" required />
+        <p>描述</p>
+        <textarea class="desc" nz-input></textarea>
+        <p>添加图片</p>
+        <p>姓名</p>
+        <input type="text" nz-input [(ngModel)]="formParams.name" required />
+        <p>手机号</p>
+        <input type="text" nz-input [(ngModel)]="formParams.phone" required />
+        <p>城市</p>
+        <input type="text" nz-input [(ngModel)]="formParams.city" required />
+        <button class="submit" nz-button (click)="submite()" [nzSize]="size" nzShape="round" nzType="default">发布</button>
+    </div>
+</div>

@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SwiperComponent } from 'src/app/component/swiper/swiper.component';
 import { NzButtonModule, NzCarouselModule } from 'ng-zorro-antd';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import { AddListingComponent } from './add-listing.component';
-import { AddListRoutingModule } from './add-list.routing';
+import { AboutComponent } from './about.component';
+import { AboutRoutingModule } from './about.routing';
 import { FormsModule } from '@angular/forms';
 @NgModule({
-    declarations: [AddListingComponent, SwiperComponent],
+    declarations: [AboutComponent],
     imports: [
         CommonModule,
         NzCarouselModule,
         NzGridModule,
+        AboutRoutingModule,
+        CommonModule,
         NzButtonModule,
         FormsModule,
-        AddListRoutingModule
     ],
     exports: [
-        AddListingComponent,
+        AboutComponent,
     ]
 })
-export class AddListModule { }
+export class AboutModule { }

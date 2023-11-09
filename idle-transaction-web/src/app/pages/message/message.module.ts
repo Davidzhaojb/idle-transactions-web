@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
-import { HomeRoutingModule } from './home-routing.module';
 import { NzCarouselModule } from 'ng-zorro-antd';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { MessageComponent } from './message.component';
+import { MessageRoutingModule } from './message.routing';
 @NgModule({
-    declarations: [HomeComponent],
+    declarations: [MessageComponent],
     imports: [
         CommonModule,
         NzCarouselModule,
         NzGridModule,
-        HomeRoutingModule,
+        MessageRoutingModule
     ],
     exports: [
-        HomeComponent,
+        MessageComponent,
     ]
 })
-export class HomeModule { }
+export class MessageModule { }

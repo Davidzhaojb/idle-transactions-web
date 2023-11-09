@@ -19,6 +19,18 @@ const routes: Routes = [
                 loadChildren: () => import('./add-listing/add-list.module').then(mod => mod.AddListModule)
             },
             {
+                path: 'message',
+                loadChildren: () => import('./message/message.module').then(mod => mod.MessageModule)
+            },
+            {
+                path: 'idlehall',
+                loadChildren: () => import('./idle-hall/idle-hall.module').then(mod => mod.IdleHallModule)
+            },
+            {
+                path: 'about',
+                loadChildren: () => import('./about/about.module').then(mod => mod.AboutModule)
+            },
+            {
                 path: '', redirectTo: 'home', pathMatch: 'full'
             },
         ]

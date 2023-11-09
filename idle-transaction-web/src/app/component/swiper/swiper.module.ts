@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SwiperComponent } from './swiper.component';
-import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { ShareModule } from 'src/share/share.module';
 
 @NgModule({
     declarations: [SwiperComponent],
     imports: [
+        ShareModule,
         CommonModule,
-        NzCarouselModule
     ],
     exports: [SwiperComponent]
 })

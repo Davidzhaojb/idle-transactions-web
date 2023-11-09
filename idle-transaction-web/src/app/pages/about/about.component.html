@@ -1,0 +1,40 @@
+<div class="content flex-center">
+    <div class="send">
+        <div class="title">
+            <span>联系我们</span>
+        </div>
+        <div class="container">
+            <div class="send-msg">
+                <div class="input-box">
+                    <input class="title-ipt" type="text" placeholder="姓名" nz-input required />
+                    <input class="title-ipt" type="text" placeholder="邮箱" nz-input required />
+                </div>
+                <div class="input-box">
+                    <input class="title-ipt" type="text" placeholder="主题" nz-input required />
+                    <input class="title-ipt" type="text" placeholder="电话" nz-input required />
+                </div>
+                <textarea class="remark" nz-input id="remark" name="remark" placeholder="内容描述"></textarea>
+                <button class="submit" nz-button (click)="submite()" [nzSize]="size" nzShape="round" nzType="default">
+                    提交
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="header">联系方式</div>
+        <div class="address">
+            <div>
+                <span>地址：</span>
+                <span>巴拉巴拉巴拉巴拉巴拉巴拉</span>
+            </div>
+            <div>
+                <span>邮箱：</span>
+                <span>23132131@qq.com</span>
+            </div>
+            <div>
+                <span>电话：</span>
+                <span>231321313</span>
+            </div>
+        </div>
+    </div>
+</div>

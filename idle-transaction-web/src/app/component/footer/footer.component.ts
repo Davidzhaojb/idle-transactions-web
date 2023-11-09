@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./footer.component.less']
 })
 export class FooterComponent implements OnInit {
-    footerMenu = ['首页', '闲置大厅', '消息通知', '关于我们', '个人中心']
+    footerMenu = ['首页', '闲置大厅', '消息通知', '联系我们', '个人中心']
     constructor() { }
 
     ngOnInit(): void {

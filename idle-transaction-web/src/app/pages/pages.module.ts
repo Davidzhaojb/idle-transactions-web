@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { PagesComponent } from './pages.component';
 import { PagesRoutingModule } from './pages-routing.module';
-import { AddListingComponent } from './add-listing/add-listing.component';
+import { ShareModule } from 'src/share/share.module';
+
 @NgModule({
-    declarations: [PagesComponent, AddListingComponent],
-    imports: [
-        CommonModule,
-        PagesRoutingModule
+    declarations: [
+        PagesComponent,
+
     ],
-    exports: [PagesComponent]
+    imports: [
+        PagesRoutingModule,
+    ],
+    exports: [
+        PagesComponent,
+    ]
 })
 export class PagesModule { }

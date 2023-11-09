@@ -1,0 +1,98 @@
+@import '../../../assets//styles/varibles.less';
+
+.content {
+    width: 1140px;
+    margin: 40px auto;
+    height: 470px;
+
+    .send {
+        width: 800px;
+        background: #f5f5f5;
+        margin-right: 10px;
+        height: 100%;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+
+        .title {
+            padding: 16px;
+            height: 70px;
+            border-bottom: 1px solid #e5e5e5;
+
+            span {
+                border-bottom: 4px solid @sec-color;
+                font-size: 20px;
+                line-height: 48px;
+                padding-bottom: 16px;
+            }
+        }
+
+        .container {
+            padding: 16px;
+            margin-top: 40px;
+
+            .send-msg {
+                .input-box {
+                    margin-bottom: 20px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .title-ipt {
+                        color: #495057;
+                        height: 39px;
+                        width: 376px;
+                        border-radius: 40px;
+                        padding: 0;
+                        padding-left: 12px;
+                        border: 1px solid #e5e5e5;
+                    }
+                }
+
+                .remark {
+                    width: 100%;
+                    padding: 10px;
+                    height: 120px;
+                    border-radius: 20px;
+                    border: 1px solid #e5e5e5;
+                }
+
+                .submit {
+                    margin: 10px auto 30px 0;
+                    width: 110px;
+                    height: 44px;
+                    background-color: @sec-color;
+                    border: @sec-color;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .info {
+        flex: 1;
+        height: 100%;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        background: #f5f5f5;
+
+        .header {
+            height: 68px;
+            line-height: 40px;
+            padding: 16px;
+            font-size: 20px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .address {
+            padding: 16px;
+
+            &>div {
+                display: flex;
+
+                &>span {
+                    width: 70px;
+                }
+
+            }
+        }
+    }
+}
