@@ -1,8 +1,8 @@
 <div class="content">
     <div class="header flex-between">
         <div class="header-item">
-            <span>登录</span>
-            <span>注册</span>
+            <span [routerLink]="['/app/login']" routerLinkActive="router-link-active" >登录</span>
+            <span [routerLink]="['/app/register']" routerLinkActive="router-link-active" >注册</span>
         </div>
         <div class="header-item">
             <span *ngFor="let item of tabLists;let i = index" [routerLink]="[item.router]"

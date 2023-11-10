@@ -10,8 +10,6 @@ import { CommonModule, registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { ShareModule } from 'src/share/share.module';
 import { ServicesModule } from './service/service.module';
-import { HeaderComponent } from './component/header/header.component';
-import { FooterComponent } from './component/footer/footer.component';
 import { UiModule } from './component/ui.module';
 
 registerLocaleData(zh);

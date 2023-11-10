@@ -1,30 +1,62 @@
-.logo {
-    width: 120px;
-    height: 31px;
-    background: rgba(255, 255, 255, 0.2);
-    margin: 16px 30px 16px 0;
-    float: left;
-}
+.content {
+    width: 1140px;
+    margin: 40px auto;
 
-.header-menu {
-    line-height: 64px;
-}
+    .logo {
+        width: 120px;
+        height: 31px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 16px 30px 16px 0;
+        float: left;
+    }
 
-.sider-menu {
-    height: 100%;
-    border-right: 0;
-}
+    .header-menu {
+        line-height: 64px;
+    }
 
-.inner-layout {
-    padding: 0 24px 24px;
-}
+    .sider-menu {
+        height: 100%;
+        border-right: 0;
+    }
 
-nz-breadcrumb {
-    margin: 16px 0;
-}
+    .inner-layout {
+        padding: 0 24px 24px;
 
-nz-content {
-    background: #fff;
-    padding: 24px;
-    min-height: 280px;
+        .hall-detail {
+            .hall-item {
+                padding: 2px;
+                height: 315px;
+                cursor: pointer;
+
+                .hall-border {
+                    height: 100%;
+                    border-radius: 4px;
+                    border: 1px solid #e5e5e5;
+
+                    img {
+                        width: 205px;
+                        height: 179px;
+                        border-top-left-radius: 4px;
+                        border-top-right-radius: 4px;
+                    }
+
+                    .hall-con {
+                        padding: 10px 10px 15px;
+                        border-radius: 0 0px 8px 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    nz-breadcrumb {
+        margin: 16px 0;
+    }
+
+    nz-content {
+        background: #fff;
+        padding: 24px;
+        min-height: 280px;
+    }
+
 }

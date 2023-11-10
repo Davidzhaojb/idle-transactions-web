@@ -1,23 +1,23 @@
 import { NgModule } from '@angular/core';
-import { IdleHallComponent } from './idle-hall.component';
-import { IdleHallRoutingModule } from './idle-hall.routing';
 import { ShareModule } from 'src/share/share.module';
 import { CommonModule } from '@angular/common';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { RegisterComponent } from './register.component';
+import { registerRoutingModule } from './register-routing';
 @NgModule({
-    declarations: [IdleHallComponent],
+    declarations: [RegisterComponent],
     imports: [
-        IdleHallRoutingModule,
+        registerRoutingModule,
         CommonModule,
         NzLayoutModule,
         NzMenuModule,
         ShareModule,
     ],
     exports: [
-        IdleHallComponent,
+        RegisterComponent,
     ]
 })
-export class IdleHallModule { 
-    
+export class RegisterModule {
+
 }
