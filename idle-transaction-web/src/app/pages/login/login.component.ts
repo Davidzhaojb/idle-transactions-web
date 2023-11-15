@@ -1,19 +1,62 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { Observable, Observer } from 'rxjs';
+import { AlertService } from 'src/app/service/alert.service';
+import { LoginService } from 'src/app/service/login.service';
+import { StorageService } from 'src/app/service/storage.service';
+import { ResultModel } from 'src/app/service/system.model';
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
-    styleUrls: ['./login.component.less']
+    styleUrls: ['./login.component.less'],
+    providers: [AlertService, NzMessageService]
 })
 export class LoginComponent implements OnInit {
     validateForm: FormGroup;
+    constructor(
+        private fb: FormBuilder,
+        private router: Router,
+        private loginService: LoginService,
+        private alertService: AlertService,
+        private storageService: StorageService
+    ) {
+        this.validateForm = this.fb.group({
+            userName: ['', [Validators.required], [this.userNameAsyncValidator]],
+            password: ['', [Validators.required]],
+        });
+
+    }
+    ngOnInit(): void {
+        // throw new Error('Method not implemented.');
+    }
     submitForm(value: { userName: string; password: string; }): void {
         for (const key in this.validateForm.controls) {
             this.validateForm.controls[key].markAsDirty();
             this.validateForm.controls[key].updateValueAndValidity();
         }
+        console.log('this.validateForm', this.validateForm);
+        console.log('this.validateFormcontrols', this.validateForm.controls);
+
+        const params = {
+            userEmail: value.userName,
+            pwd: value.password
+        }
+        this.loginService.login(params).subscribe((res: ResultModel<any>) => {
+            console.log('ressss', res);
+            if (res && res.code == 1) {
+                this.router.navigate(['/app/home']);
+                this.alertService.okMsg('登录成功');
+                this.storageService.setItem({
+                    key: 'token',
+                    value: res.data.token
+                });
+            } else {
+                this.alertService.errorMsg(res.msg);
+            }
+        })
         console.log(value);
     }
 
@@ -27,7 +70,7 @@ export class LoginComponent implements OnInit {
     }
 
     validateConfirmPassword(): void {
-        setTimeout(() => this.validateForm.controls.confirm.updateValueAndValidity());
+        // setTimeout(() => this.validateForm.controls.confirm.updateValueAndValidity());
     }
 
     userNameAsyncValidator = (control: FormControl) =>
@@ -52,14 +95,6 @@ export class LoginComponent implements OnInit {
         return {};
     };
 
-    constructor(private fb: FormBuilder) {
-        this.validateForm = this.fb.group({
-            userName: ['', [Validators.required], [this.userNameAsyncValidator]],
-            password: ['', [Validators.required]],
-        });
-    }
-    ngOnInit(): void {
-        throw new Error('Method not implemented.');
-    }
+
 
 }

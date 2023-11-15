@@ -1,20 +1,50 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Observable, Observer } from 'rxjs';
+import { LoginService } from 'src/app/service/login.service';
 @Component({
     selector: 'app-register',
     templateUrl: './register.component.html',
     styleUrls: ['./register.component.less']
 })
 export class RegisterComponent implements OnInit {
-
     validateForm: FormGroup;
-    submitForm(value: { userName: string; email: string; password: string; confirm: string; comment: string }): void {
+    params = {
+        userName: '',
+        userEmail: '',
+        pwdGroup: {
+            pwd: '',
+            rePwd: ''
+          }
+    }
+    constructor(
+        private fb: FormBuilder,
+        private loginService: LoginService
+    ) {
+        this.validateForm = this.fb.group({
+            userName: ['', [Validators.required], [this.userNameAsyncValidator]],
+            email: ['', [Validators.email, Validators.required]],
+            password: ['', [Validators.required]],
+            confirm: ['', [this.confirmValidator]],
+        });
+    }
+    ngOnInit(): void {
+
+    }
+    submitForm(value: { userName: string; email: string; password: string; confirm: string; }): void {
+        this.params.userName = value.userName;
+        this.params.userEmail = value.email;
+        this.params.pwdGroup.pwd = value.password;
+        this.params.pwdGroup.rePwd = value.confirm;
+
         for (const key in this.validateForm.controls) {
             this.validateForm.controls[key].markAsDirty();
             this.validateForm.controls[key].updateValueAndValidity();
         }
-        console.log(value);
+        console.log('this.params', this.params);
+        this.loginService.register(this.params).subscribe(res => {
+            console.log('ress', res);
+        })
     }
 
     resetForm(e: MouseEvent): void {
@@ -52,17 +82,7 @@ export class RegisterComponent implements OnInit {
         return {};
     };
 
-    constructor(private fb: FormBuilder) {
-        this.validateForm = this.fb.group({
-            userName: ['', [Validators.required], [this.userNameAsyncValidator]],
-            email: ['', [Validators.email, Validators.required]],
-            password: ['', [Validators.required]],
-            confirm: ['', [this.confirmValidator]],
-            comment: ['', [Validators.required]]
-        });
-    }
-    ngOnInit(): void {
-        throw new Error('Method not implemented.');
-    }
+
+
 
 }

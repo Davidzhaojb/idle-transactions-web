@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        // this.test();
+        this.test();
     }
     test() {
         this.testService.getHotLottery().subscribe(res => {

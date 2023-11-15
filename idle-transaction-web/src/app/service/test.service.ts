@@ -13,7 +13,7 @@ export class TestService {
      * 热门游戏和热门第三方
      */
     getHotLottery(): Observable<ResultModel<any>> {
-        console.log('到这里了吗')
+        console.log('到这里了吗',this.uri);
         return this.http.get(this.uri + 'test').pipe(map((res: ResultModel<any>) => res));
     }
 }

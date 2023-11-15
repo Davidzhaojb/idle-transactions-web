@@ -1,16 +1,12 @@
 export interface ResultModel<T> {
     /**
-     * 0：请求成功 ； 1：请求失败
-     */
-    error: number;
-    /**
      * 错误状态码 具体可参考全局错误码
      */
-    code: string;
+    code: number;
     /**
      * 	错误信息
      */
-    message: string;
+    msg: string;
     /**
      * 返回的Json对象
      */
@@ -22,7 +18,7 @@ export interface ISliderSecurity {
     slidingImage: string;
     backImage: string;
     yHeight: number;
-  }
+}
 
 export interface HomePicModel {
     Content: string;
@@ -109,7 +105,7 @@ export interface LoginInfoModel {
     imu: string;
     imt: string;
     imid: string;
-    isSimplePassword:boolean;
+    isSimplePassword: boolean;
 }
 
 export interface LoginLogModel {
