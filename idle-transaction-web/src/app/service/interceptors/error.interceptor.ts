@@ -62,6 +62,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                         if (response.status === 200 && response.body && response.body.code !== 0) {
                             const message = response.body.message || '未知错误';
                             let isTourists = JSON.parse(this.storage.getItem('isTourists'));
+                            console.log('response.body.code',response.body.code);
                             // if (!isTourists) {
                             //     if (response.body.code === '0-1') {
                             //         AppConsts.userInfo.isLogin = false;

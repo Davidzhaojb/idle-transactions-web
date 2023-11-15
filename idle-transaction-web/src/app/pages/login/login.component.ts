@@ -37,9 +37,6 @@ export class LoginComponent implements OnInit {
             this.validateForm.controls[key].markAsDirty();
             this.validateForm.controls[key].updateValueAndValidity();
         }
-        console.log('this.validateForm', this.validateForm);
-        console.log('this.validateFormcontrols', this.validateForm.controls);
-
         const params = {
             userEmail: value.userName,
             pwd: value.password

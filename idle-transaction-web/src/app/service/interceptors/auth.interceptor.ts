@@ -12,6 +12,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     constructor() { }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        console.log('???')
         let reqUrl = req.url;
         let clonedRequest = req.clone({ url: reqUrl });
         const needToken = ignoreToken.filter(u => reqUrl.match(u));

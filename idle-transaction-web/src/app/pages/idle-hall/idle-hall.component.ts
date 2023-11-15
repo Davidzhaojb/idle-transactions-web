@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PublistData } from 'src/app/modules/publist.module';
+import { PublistService } from 'src/app/service/publist.service';
+import { ResultModel } from 'src/app/service/system.model';
 
 @Component({
     selector: 'app-idle-hall',
@@ -6,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./idle-hall.component.less']
 })
 export class IdleHallComponent implements OnInit {
-    list = [1,2,3,4];
+    dataList: PublistData;
     categoryLists = [
+        {
+            name: '全部分类', icon: '../../../assets/images/category/icon1.png', isOpen: 'true', childrens: [
+
+            ]
+        },
         {
             name: '机动车', icon: '../../../assets/images/category/icon1.png', isOpen: 'false', childrens: [
                 { name: '摩托车', isSelect: false },
@@ -84,9 +92,20 @@ export class IdleHallComponent implements OnInit {
             ]
         },
     ]
-    constructor() { }
+    constructor(
+        private publishService: PublistService
+    ) { }
 
     ngOnInit(): void {
+        this.getListData();
     }
-
+    // 获取商品列表
+    getListData() {
+        this.publishService.getList().subscribe((res: ResultModel<any>) => {
+            console.log('resss', res)
+            if (res && res.code == 1) {
+                this.dataList = res.data
+            }
+        })
+    }
 }
