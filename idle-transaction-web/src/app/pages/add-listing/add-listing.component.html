@@ -21,6 +21,16 @@
         <p>描述</p>
         <textarea class="desc" [(ngModel)]="formParams.describe" nz-input></textarea>
         <p>添加图片</p>
+        <!-- <form (submit)="onSubmit()">
+            <input type="file" (change)="onFileSelected($event)" />
+            <button type="submit">上传</button>
+        </form> -->
+        <div class="file">
+            <span><a>+</a></span>
+            <span><a>+</a></span>
+            <span><a>+</a></span>
+            <span><a>+</a></span>
+        </div>
         <p>姓名</p>
         <input type="text" nz-input [(ngModel)]="formParams.userName" required />
         <p>手机号</p>

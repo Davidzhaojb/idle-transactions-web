@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } fro
 import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { Observable, Observer } from 'rxjs';
+import { AppConsts } from 'src/app/core/AppConsts';
 import { AlertService } from 'src/app/service/alert.service';
 import { LoginService } from 'src/app/service/login.service';
 import { StorageService } from 'src/app/service/storage.service';
@@ -46,10 +47,12 @@ export class LoginComponent implements OnInit {
             if (res && res.code == 1) {
                 this.router.navigate(['/app/home']);
                 this.alertService.okMsg('登录成功');
+                AppConsts.isLogin = true;
                 this.storageService.setItem({
                     key: 'token',
                     value: res.data.token
                 });
+                
             } else {
                 this.alertService.errorMsg(res.msg);
             }

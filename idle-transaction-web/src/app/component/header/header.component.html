@@ -1,20 +1,27 @@
 <div class="content">
     <div class="header flex-between">
         <div class="header-item">
-            <span [routerLink]="['/app/login']" routerLinkActive="router-link-active" >登录</span>
-            <span [routerLink]="['/app/register']" routerLinkActive="router-link-active" >注册</span>
-        </div>
-        <div class="header-item">
             <span *ngFor="let item of tabLists;let i = index" [routerLink]="[item.router]"
                 routerLinkActive="router-link-active">
                 {{item.name}}
             </span>
         </div>
+        <div class="header-item" *ngIf="!isLogin">
+            <span [routerLink]="['/app/login']" routerLinkActive="router-link-active">登录</span>
+            <span [routerLink]="['/app/register']" routerLinkActive="router-link-active">注册</span>
+        </div>
+        <div class="header-item login-item" *ngIf="isLogin">
+            <img src="../../../assets//images/home/icon.png" alt="" srcset="">
+            <div class="exit">
+                <span class="name">大卫</span>
+                <button class="exit-btn" nz-button nzType="dashed" (click)="exit()">退出登录</button>
+            </div>
+        </div>
     </div>
     <div class="top-con">
         <div class="top flex-between">
             <img src="../../../assets/images/logo.png" alt="" srcset="">
-            <div class="addbtn" [routerLink]="['app/addlist']">
+            <div class="addbtn" (click)="publist()">
                 发布闲置
             </div>
         </div>

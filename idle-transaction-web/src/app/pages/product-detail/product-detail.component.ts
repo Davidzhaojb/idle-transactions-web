@@ -19,7 +19,6 @@ export class ProductDetailComponent implements OnInit {
     ngOnInit(): void {
         this.productId = this.route.snapshot.paramMap.get('id');
         this.getDetail();
-        console.log('this.productId', this.productId);
     }
     /**
      * 获取商品详情
@@ -27,7 +26,7 @@ export class ProductDetailComponent implements OnInit {
     getDetail() {
         this.publicService.getDetail({ id: this.productId }).subscribe((res: ResultModel<any>) => {
             if (res && res.code == 1) {
-                
+
             } else {
                 this.alertService.errorMsg(res.msg);
             }

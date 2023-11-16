@@ -1,15 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-message',
-  templateUrl: './message.component.html',
-  styleUrls: ['./message.component.less']
+    selector: 'app-message',
+    templateUrl: './message.component.html',
+    styleUrls: ['./message.component.less']
 })
 export class MessageComponent implements OnInit {
+    panels = [
+        {
+            active: true,
+            name: 'This is panel header 1',
+            disabled: false
+        },
+        {
+            active: false,
+            disabled: false,
+            name: 'This is panel header 2'
+        },
+        {
+            active: false,
+            disabled: true,
+            name: 'This is panel header 3'
+        }
+    ];
+    constructor() { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }

@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NzMessageService } from 'ng-zorro-antd';
 import { Observable, Observer } from 'rxjs';
+import { AlertService } from 'src/app/service/alert.service';
 import { LoginService } from 'src/app/service/login.service';
 @Component({
     selector: 'app-register',
     templateUrl: './register.component.html',
-    styleUrls: ['./register.component.less']
+    styleUrls: ['./register.component.less'],
+    providers: [NzMessageService,AlertService]
 })
 export class RegisterComponent implements OnInit {
     validateForm: FormGroup;
@@ -15,10 +19,12 @@ export class RegisterComponent implements OnInit {
         pwdGroup: {
             pwd: '',
             rePwd: ''
-          }
+        }
     }
     constructor(
         private fb: FormBuilder,
+        private router: Router,
+        private alert: AlertService,
         private loginService: LoginService
     ) {
         this.validateForm = this.fb.group({
@@ -44,6 +50,12 @@ export class RegisterComponent implements OnInit {
         console.log('this.params', this.params);
         this.loginService.register(this.params).subscribe(res => {
             console.log('ress', res);
+            if (res && res.code == 1) {
+                this.alert.okMsg(res.msg)
+                this.router.navigate(['/app/login']);
+            } else {
+                this.alert.okMsg(res.msg)
+            }
         })
     }
 

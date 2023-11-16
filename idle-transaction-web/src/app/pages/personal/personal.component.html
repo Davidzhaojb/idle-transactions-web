@@ -1,12 +1,66 @@
 <div class="content">
     <div class="left flex-column flex-center">
-       <img src="../../../assets/images/home/icon.png" alt="" srcset=""> 
-       <p>dawei999</p>
-       <p>加入我们的第1天</p>
-
+        <img src="../../../assets/images/home/icon.png" alt="" srcset="">
+        <p>dawei999</p>
+        <p>加入我们的第1天</p>
+        <button class="per-button" *ngFor="let item of columnListMenu;let i = index"
+            [ngClass]="{'active': currentIndex == i}" (click)="changeIdx(i)">
+            {{item}}
+        </button>
     </div>
-    <div class="right">
-        <p>基本资料</p>
-        
+    <div class="right" *ngIf="currentIndex == 0">
+        <div class="base">
+            <p class="title">基本资料</p>
+            <div class="personal-info">
+                <div>
+                    <span>账号：</span>
+                    <span>dawei</span>
+                </div>
+                <div>
+                    <span>昵称：</span>
+                    <span>dawei</span>
+                    <button nz-button [nzSize]="size" nzType="dashed">修改</button>
+                </div>
+                <div>
+                    <span>生日：</span>
+                    <span>dawei</span>
+                    <button nz-button [nzSize]="size" nzType="dashed">设置</button>
+                </div>
+                <div>
+                    <span>上次登录时间：</span>
+                    <span>dawei</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="safe">
+            <p class="title">账户安全</p>
+            <div class="safe-info">
+                <div>
+                    <p>登录密码</p>
+                    <p>不定时的修改登录密码，可提高账户的安全性。</p>
+                    <button nz-button [nzSize]="size" nzType="dashed">修改</button>
+                </div>
+                <div>
+                    <p>密保问题</p>
+                    <p>请牢记您的密保问题设置，可帮您快速找回密码。</p>
+                    <button nz-button [nzSize]="size" nzType="dashed">设置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right" *ngIf="currentIndex == 1">
+        <p class="title">我的发布</p>
+        <div class="pub-con">
+            <div class="my-publist" *ngFor="let item of dataList;let i = index">
+                <img src="../../../assets/images/hall/01.jpg" alt="" srcset="">
+                <div class="hall-con">
+                    <p class="text-weight">{{item.title}}</p>
+                    <p>分类：{{item.type}}</p>
+                    <p>地点：{{item.city}}</p>
+                    <p>时间：{{item.createdTime}}</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
